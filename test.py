@@ -4,7 +4,6 @@
 from __future__ import unicode_literals
 import unittest
 import virastar
-from config import configs
 
 class VirastarTest(unittest.TestCase):
     def setUp(self):
