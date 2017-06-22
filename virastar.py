@@ -1,12 +1,11 @@
-#coding:utf-8
-#virastar version 0.0.1
+# -*- encoding: utf-8 -*-
 
 from __future__ import unicode_literals
-
 import re
-import sys
 
-    
+
+__version__ = '0.1.0'
+
 
 class PersianEditor:
     default_options = {
@@ -31,8 +30,9 @@ class PersianEditor:
     def __init__(self, custom_options = {}):
         self.options = self.default_options.copy()
         self.options.update(custom_options)
-        
-    def tr(self, intab, outtab, txt):
+
+    @classmethod
+    def tr(cls, intab, outtab, txt):
         return txt.translate( {ord(k):v for k,v in zip(intab, outtab)})
         
     def cleanup(self, text):
@@ -139,5 +139,5 @@ class PersianEditor:
         # bringing back urls
         for i, url in enumerate(urls):
             text = text.replace("__URL__PLACEHOLDER__", urls[i], 1)
-        self.cleaned_text = text
+
         return text
