@@ -273,5 +273,5 @@ class VirastarTestCase(unittest.TestCase):
         self.assertEqual(pe.cleanup(test), result)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     unittest.main()
