@@ -1,10 +1,5 @@
 language: python
-python:
-- 2.7
-- 3.5
-- 3.6
-- nightly
-before_install:
-- pip install -U pip setuptools wheel nose coverage coveralls
+python: 2.7
+before_install: pip install -U pip setuptools wheel nose coverage coveralls
 install: pip install -e .
 script: coverage run --source virastar $(which nosetests) test.py
