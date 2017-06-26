@@ -10,7 +10,7 @@ long_description = """
 virastar.py
 ===========
 
-Please check test.py file on hoe to use code.
+Please check test.py file on how to use the code.
 
 """
 
