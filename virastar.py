@@ -54,11 +54,11 @@ class PersianEditor:
 
         # replace English quotes with their Persian equivalent
         if self.options['fix_english_quotes']:
-            text = re.sub(r"""(["'`]+)(.+?)(\1)""", ur'«\2»', text) 
+            text = re.sub(r"""(["'`]+)(.+?)(\1)""", r'«\2»', text) 
 
         # should convert ه ی to ه
         if self.options['fix_hamzeh']:
-            text = re.sub(r"""(\S)(ه[\s‌]+[یي])(\s)""", ur'\1هٔ\3', text, flags=re.UNICODE) 
+            text = re.sub(r"""(\S)(ه[\s‌]+[یي])(\s)""", r'\1هٔ\3', text, flags=re.UNICODE) 
 
         # remove unnecessary zwnj char that are succeeded/preceded by a space
         if self.options['cleanup_zwnj']:
@@ -85,7 +85,7 @@ class PersianEditor:
         # put zwnj between word and prefix (mi* nemi*)
         # there's a possible bug here: می and نمی could be separate nouns and not prefix
         if self.options['fix_perfix_spacing']:
-            text = re.sub(r"""\s+(ن?می)\s+""", ur' \1‌', text)
+            text = re.sub(r"""\s+(ن?می)\s+""", r' \1‌', text)
 
         # put zwnj between word and suffix (*tar *tarin *ha *haye)
         # there's a possible bug here: های and تر could be separate nouns and not suffix
